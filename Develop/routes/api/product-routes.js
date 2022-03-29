@@ -69,6 +69,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// ERROR 400 BAD REQUEST
 // update product
 router.put('/:id', (req, res) => {
   // update product data

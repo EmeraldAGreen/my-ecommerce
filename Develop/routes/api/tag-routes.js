@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
   
 });
 
+// ERROR IN INSOMNIA 500 
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   try {
@@ -47,10 +48,11 @@ router.post('/', async (req, res) => {
   }
 });
 
+// ERROR IN INSOMNIA 500
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const tagData = await Tag.update({
+    const tagData = await ProductTag.update({
       where: {
         id: req.params.id,
       },

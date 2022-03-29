@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// ERROR 400 BAD REQUEST
 router.post('/', async (req, res) => {
   // create a new category
   try {
@@ -64,6 +65,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// ERROR 500 INTERNAL SERVER ERROR
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
