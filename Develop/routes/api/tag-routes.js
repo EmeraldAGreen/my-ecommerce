@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   
 });
 
-// ERROR IN INSOMNIA 500 
+
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   try {
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Product }],
     });
 
-    if (!readerData) {
+    if (!tagData) {
       res.status(404).json({ message: 'No tag found with that id!' });
       return;
     }
@@ -48,11 +48,10 @@ router.post('/', async (req, res) => {
   }
 });
 
-// ERROR IN INSOMNIA 500
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const tagData = await ProductTag.update(req.body, {
+    const tagData = await Tag.update(req.body, {
       where: {
         id: req.params.id,
       },
